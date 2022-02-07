@@ -4,6 +4,8 @@ function FeedbackStats({ feedback }: FeedbackStatsProps) {
     feedback.reduce((acc, curr) => {
       return acc + curr.rating;
     }, 0) / feedback.length;
+  // round to one decimal place
+  avg = Math.round(avg * 10) / 10;
 
   return (
     <div className='feedback-stats'>
